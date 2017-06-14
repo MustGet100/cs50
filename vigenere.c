@@ -5,6 +5,10 @@
 int main(int argc, string argv[])
 {
     string c=(argv[1]);
+    if(argc!=2||argv[1]=='\0') {
+    printf("Print some words at least\n");
+    return(1);
+}
     for (int i = 0; i < strlen(c); i++)
     {   
         if (!isalpha(c[i]))
@@ -22,11 +26,11 @@ int main(int argc, string argv[])
         for (int l = 0, j = strlen(c); l < j; l++){
             if (isupper(s[q]))
             {
-               printf("%c",((s[l]+toupper(c[q])-65)%26+65));
+               printf("%c",((s[q]+toupper(c[l])-65)%26+65));
             }
             else if (islower(s[q]))
             {
-               printf("%c",((s[l]+tolower(c[q])-97)%26+97));
+               printf("%c",((s[q]+tolower(c[l])-97)%26+97));
             }
             else {
                 printf("%c",s[l]);
@@ -34,10 +38,6 @@ int main(int argc, string argv[])
         }
         printf("\n");
         return(0);           
-    if(argc!=2) {
-    printf("Usage:./viganerek");
-    return(1);
-}
 }
 }
 }
